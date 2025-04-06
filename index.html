@@ -6,6 +6,12 @@
     <title>PsiqueSofía</title>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: 'Questrial', sans-serif;
         background-image: url('images/Diseño sin título.jpg');
@@ -14,29 +20,13 @@
         background-attachment: fixed;
         background-repeat: no-repeat;
         color: #fff;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      header {
-        background-color: rgba(0, 0, 0, 0.3); /* semi-transparente */
-        padding: 40px 20px;
-      }
-
-      h1 {
-        font-size: 2.5em;
-        margin: 0;
-        color: #d0f0e0; /* azul turquesa clarito */
-      }
-
-      p {
-        font-size: 1.2em;
-        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       nav {
-        background-color: rgba(0, 0, 0, 0.2); /* menú transparente */
+        background-color: rgba(0, 0, 0, 0.2);
         padding: 10px 0;
         position: sticky;
         top: 0;
@@ -45,8 +35,6 @@
 
       nav ul {
         list-style: none;
-        margin: 0;
-        padding: 0;
         display: flex;
         justify-content: center;
         gap: 20px;
@@ -60,18 +48,84 @@
         border: 2px solid #d0f0e0;
         border-radius: 8px;
         font-weight: bold;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
       }
 
       nav a:hover {
         background-color: rgba(255, 255, 255, 0.2);
         color: #d0f0e0;
+        transform: scale(1.05);
+      }
+
+      .contenido {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px 60px;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 40px 30px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        animation: fadeIn 2s ease-in-out, float 4s ease-in-out infinite;
+      }
+
+      h1 {
+        font-size: 3em;
+        color: #d0f0e0;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.3em;
+        animation: fadeIn 2s ease-in-out 0.5s both;
+      }
+
+      section {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 30px;
+        animation: fadeIn 2s ease-in-out 1s both;
+      }
+
+      section h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
       }
 
       footer {
         background-color: rgba(0, 0, 0, 0.4);
+        text-align: center;
         padding: 20px;
         font-size: 0.9em;
+        margin-top: auto;
+      }
+
+      /* ✨ Animaciones ✨ */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
     </style>
   </head>
@@ -86,19 +140,20 @@
       </ul>
     </nav>
 
-    <header>
-      <h1>PsiqueSofía</h1>
-      <p>Un espacio de transformación, con la mirada al interior</p>
-    </header>
+    <div class="contenido">
+      <header>
+        <h1>PsiqueSofía</h1>
+        <p>Un espacio de transformación, con la mirada al interior</p>
+      </header>
 
-    <section>
-      <h2>Bienvenida</h2>
-      <p>Explora mis palabras.</p>
-    </section>
+      <section>
+        <h2>Bienvenida</h2>
+        <p>Explora mis palabras.</p>
+      </section>
+    </div>
 
     <footer>
       <p>© 2025 PsiqueSofía · Creado con 💛 y café</p>
     </footer>
   </body>
 </html>
-
