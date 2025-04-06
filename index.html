@@ -1,125 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PsiqueSofía</title>
-    <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('images/fondo.jpg'); /* o solo 'fondo-bosque.jpg' si está en la raíz */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PsiqueSofía</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background-image: url('fondo.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-  header {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 40px 20px;
-  }
-      h1 {
-        font-size: 2.5em;
-        margin: 0;
-      }
+    nav {
+      background-color: rgba(200, 160, 255, 0.8); /* lila suave */
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-      p {
-        font-size: 1.2em;
-        margin-top: 10px;
-      }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
 
-      section {
-        padding: 40px 20px;
-      }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #caa5f5;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
 
-      img {
-        width: 300px;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        margin-top: 20px;
-      }
+    nav a:hover {
+      background-color: #b38be0;
+    }
 
-      footer {
-        background-color: #f1c5ae;
-        padding: 20px;
-        font-size: 0.9em;
-      }
-      nav {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    header {
+      background-color: rgba(64, 224, 208, 0.8); /* azul turquesa */
+      padding: 40px 20px;
+    }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+    h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
-  background-color: #f1c5ae;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+    p {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
 
-nav a:hover {
-  background-color: #e7b09a;
-}
-    </style>
-  </head>
-  <body>
-    <nav>
-  <ul>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#blog">Blog y escritos</a></li>
-    <li><a href="#podcast">Podcast</a></li>
-    <li><a href="#cursos">Cursos</a></li>
-  </ul>
-</nav>
-    <header>
-      <h1>PsiqueSofía</h1>
-      <p>Un espacio de transformación, con la mirada al interior</p>
-    </header>
-<section id="sobre-mi">
-  <h2>Sobre mí</h2>
-  <p>¡Hola! Soy Sofía, psicóloga apasionada por el arte, la escritura y el autoconocimiento.</p>
-</section>
+    footer {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
 
-<section id="blog">
-  <h2>Blog y escritos</h2>
-  <p>Próximamente compartiré mis reflexiones, cuentos y ensayos.</p>
-</section>
+  <nav>
+    <ul>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="blog.html">Blog y escritos</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+    </ul>
+  </nav>
 
-<section id="podcast">
-  <h2>Podcast</h2>
-  <p>Muy pronto podrás escuchar mi voz en temas de psicología, vida cotidiana y creatividad.</p>
-</section>
+  <header>
+    <h1>Psiquesofía</h1>
+    <p>Un espacio de transformación, con la mirada al interior</p>
+  </header>
 
-<section id="cursos">
-  <h2>Cursos</h2>
-  <p>En proceso de diseño... cursos para conectar contigo desde lo emocional y lo creativo.</p>
-</section>
-    <section>
-      <h2>Explora mis escritos</h2>
-      <p>Cursos, blogs, podcasts y más por descubrir</p>
-      <img src="https://picsum.photos/300/200" alt="imagen decorativa">
-    </section>
+  <section>
+    <h2>Bienvenida</h2>
+    <p>Explora mis palabras.</p>
+  </section>
 
-    <footer>
-      <p>© 2025 PsiqueSofía · Creado con 💛 y café</p>
-    </footer>
-  </body>
+  <footer>
+    <p>© 2025 PsiqueSofía · Creado con 💛 y café</p>
+  </footer>
+
+</body>
 </html>
+
