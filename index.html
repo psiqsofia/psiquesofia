@@ -48,14 +48,70 @@
         padding: 20px;
         font-size: 0.9em;
       }
+      nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f1c5ae;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #e7b09a;
+}
     </style>
   </head>
   <body>
+    <nav>
+  <ul>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#blog">Blog y escritos</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+  </ul>
+</nav>
     <header>
       <h1>PsiqueSofía</h1>
       <p>Un espacio de transformación, con la mirada al interior</p>
     </header>
+<section id="sobre-mi">
+  <h2>Sobre mí</h2>
+  <p>¡Hola! Soy Sofía, psicóloga apasionada por el arte, la escritura y el autoconocimiento.</p>
+</section>
 
+<section id="blog">
+  <h2>Blog y escritos</h2>
+  <p>Próximamente compartiré mis reflexiones, cuentos y ensayos.</p>
+</section>
+
+<section id="podcast">
+  <h2>Podcast</h2>
+  <p>Muy pronto podrás escuchar mi voz en temas de psicología, vida cotidiana y creatividad.</p>
+</section>
+
+<section id="cursos">
+  <h2>Cursos</h2>
+  <p>En proceso de diseño... cursos para conectar contigo desde lo emocional y lo creativo.</p>
+</section>
     <section>
       <h2>Explora mis escritos</h2>
       <p>Cursos, blogs, podcasts y más por descubrir</p>
