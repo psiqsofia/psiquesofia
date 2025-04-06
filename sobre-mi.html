@@ -2,11 +2,113 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre mí - Psiquesofía</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí - PsiqueSofía</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Questrial', sans-serif;
+      background-image: url('images/sobremifondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 60px 20px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 600px;
+      margin: 50px auto;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 40px 20px;
+    }
+
+    .slide img {
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-buttons {
+      margin-top: 20px;
+    }
+
+    .nav-buttons button {
+      background-color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #ddd;
+    }
+  </style>
 </head>
 <body>
-  <h1>Sobre mí</h1>
-  <p>¡Hola! Esta página estará dedicada a conocerme más.</p>
-  <a href="index.html">Volver al inicio</a>
+  <header>
+    <h1>Sobre mí</h1>
+  </header>
+
+  <div class="slider">
+    <div class="slides" id="slideContainer">
+      <div class="slide">
+        <p>Hola, mi nombre es Sofía, y más que psicóloga me considero exploradora del alma.</p>
+      </div>
+      <div class="slide">
+        <p>He trabajado mayormente en psicología social, con comunidad, y he conocido la fortaleza de las personas.</p>
+      </div>
+      <div class="slide">
+        <img src="images/yo%20animada.jpeg" alt="Yo animada">
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+      <button onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.getElementById('slideContainer');
+    const totalSlides = slides.children.length;
+
+    function moveSlide(step) {
+      currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
 </body>
 </html>
+
