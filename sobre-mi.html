@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre mí - PsiqueSofía</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Questrial', sans-serif;
       background-image: url('images/sobremifondo.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       background-repeat: no-repeat;
-      color: #fff;
-      margin: 0;
-      padding: 0;
+      background-attachment: fixed;
+      color: white;
       text-align: center;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.4);
       padding: 60px 20px 20px;
+      background-color: rgba(0, 0, 0, 0.3);
     }
 
     h1 {
@@ -30,49 +29,60 @@
     }
 
     .slider {
-      position: relative;
-      max-width: 600px;
-      margin: 50px auto;
+      width: 80%;
+      max-width: 800px;
+      height: 300px;
+      margin: 40px auto;
       overflow: hidden;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 15px;
-    }
-
-    .slides {
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.4);
       display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 300%;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
 
     .slide {
-      min-width: 100%;
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
       box-sizing: border-box;
-      padding: 40px 20px;
+    }
+
+    .slide.active {
+      display: block;
     }
 
     .slide img {
-      width: 80%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
     }
 
     .nav-buttons {
-      margin-top: 20px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
     }
 
     .nav-buttons button {
-      background-color: #fff;
+      background: rgba(255,255,255,0.5);
       border: none;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 5px;
+      padding: 10px 20px;
       cursor: pointer;
-      font-weight: bold;
-      color: #333;
+      font-size: 1em;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     .nav-buttons button:hover {
-      background-color: #ddd;
+      background: rgba(255,255,255,0.8);
     }
   </style>
 </head>
@@ -82,33 +92,36 @@
   </header>
 
   <div class="slider">
-    <div class="slides" id="slideContainer">
-      <div class="slide">
-        <p>Hola, mi nombre es Sofía, y más que psicóloga me considero exploradora del alma.</p>
-      </div>
-      <div class="slide">
-        <p>He trabajado mayormente en psicología social, con comunidad, y he conocido la fortaleza de las personas.</p>
-      </div>
-      <div class="slide">
-        <img src="images/yo%20animada.jpeg" alt="Yo animada">
-      </div>
+    <div class="slide active">
+      <p>Hola, mi nombre es Sofía, y más que psicóloga me considero exploradora del alma.</p>
+    </div>
+    <div class="slide">
+      <p>He trabajado mayormente en psicología social, con comunidad, y he conocido la fortaleza de las personas.</p>
+    </div>
+    <div class="slide">
+      <img src="images/yo animada.jpeg" alt="Yo animada">
     </div>
     <div class="nav-buttons">
-      <button onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-      <button onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+      <button onclick="plusSlides(-1)">&#10094;</button>
+      <button onclick="plusSlides(1)">&#10095;</button>
     </div>
   </div>
 
   <script>
-    let currentIndex = 0;
-    const slides = document.getElementById('slideContainer');
-    const totalSlides = slides.children.length;
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
 
-    function moveSlide(step) {
-      currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function plusSlides(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
     }
   </script>
 </body>
 </html>
-
