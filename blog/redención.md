@@ -1,5 +1,5 @@
 ---
-title: "La niña que miraba el cielo"
+title: "Hay redención en los pasos que damos"
 tags: [renacer, resurgir, superación, libertad]
 ---
 Y no solo para sí misma. Es una manera de percibirlo.
