@@ -1,0 +1,20 @@
+---
+title: "El paradigma psiquedélico: un enfoque siempre antiguo y siempre nuevo"
+tags: [psicoterapia, psicología, psicodélico, enteógeno]
+---
+Objetivo: Exponer desde la evidencia algunas de las aplicaciones de los enteógenos en temas concernientes a la psicología, desde las relaciones del individuo situado en un contexto, hacia los comportamientos, pensamientos y sentimientos asociados al sufrimiento.
+Justificación: 
+La medicina psicodélica ha sido utilizada desde la antigüedad. La mezcalina (derivado del peyote), la psilocibina y la ayahuasca eran utilizadas por las comunidades indígenas de América para comprender eventos que de otro modo serían incomprensibles, pues las plantas sagradas, según ellos los sostenían, alentaban a luchar sin temor, y los protegía de todo peligro. (Carod, 2015)
+En los años 70s en Estados Unidos fue prohibida la utilización de psicodélicos en medicina, sin embargo han surgido nueva hipótesis acerca de los estados alterados de conciencia, como la del cerebro entrópico, que surge a partir de que los enteógenos parecen aumentar la entropía cerebral, por lo que se generan redes funcionales menos constreñidas, lo cual podría ser una base terapéutica en la flexibilización de los estados mentales obsesivos, como los caracterizados en trastornos como la depresión. (Viol et. Al, 2021; Winkelman & Sessa, 2019). 
+Por otro lado, no solo se han evidenciado efectos en psicoterapia, sino además “Psychedelics were also perceived in some quarters as potent agents of social change and had a vital though at times unappreciated role in the emergence of many political rights movements of that era.” (Grob & Bossis, 2017, p. 316). Es decir, los enteógenos pueden llegar a transformar los pensamientos y comportamientos de las personas e impulsarlos incluso al compromiso político, una noción frecuentemente estudiada desde la psicología social. 
+Contextualización disciplinar:
+Lo particular del enfoque psicodélico está en que las experiencias cumbre o de tipo místico tienen un gran potencial curativo y psicoterapéutico (Yensen, 1998), proponiendo abordar no solo síntomas sino induciendo mediante la medicina a que las personas logren cambiar sus creencias y pensamientos. (McGovern, 2022).
+Aportes a la psicología y a la sociedad:
+Además del conocido potencial psicoterapéutico, los enteógenos pueden aportar a la construcción de una sociedad más reconciliada consigo misma, retornando a las raíces ancestrales de las plantas que para los nativos de nuestras tierras eran sagradas.
+Bibliografía:
+•	Carod-Artal, F. J. (2015). Hallucinogenic drugs in pre-Columbian Mesoamerican cultures. Neurología (English Edition), 30(1), 42-49. https://doi.org/10.1016/j.nrleng.2011.07.010
+•	Grob, Charles S.; Bossis, Anthony (2017). Psicología Humanista, Psicodélicos y la Visión Transpersonal. Revista de Psicología Humanista, 57(4), 315–318. doi:10.1177/0022167817715960 
+•	McGovern, H.T., Leptourgos, P., Hutchinson, B.T. et al. (2022). Do psychedelics change beliefs?. Psychopharmacology 239, 1809–1821 https://doi.org/10.1007/s00213-022-06153
+•	Viol, A., Felippe, H., Viswanathan, GM, Palhano-Fontes, F., Onias, H. y de Araujo, DB (2021). Física estadística aplicada a la neurociencia de los estados alterados: el cerebro bajo la influencia de psicodélicos. Revista Brasileira de Ensino de Física , 43 , 1-12–12. https://doi.org/10.1590/1806-9126-RBEF-2020-0440
+•	Winkelman, M. & Sessa, B. (2019). Advances in Psychedelic Medicine : State-of-the-Art Therapeutic Applications. Praeger.
+•	Yensen, R. (1998). Hacia una Medicina Psiquedélica: reflexiones sobre el uso de enteógenos en psicoterapia. La Liebre de Marzo. ISBN 10: 8487403360 
