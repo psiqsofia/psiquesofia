@@ -1,0 +1,34 @@
+---
+title: "No hay mal que por bien no venga"
+tags: [cuento, amor, soltar, desamor]
+---
+
+Cuando viajé a Madrid quedé perdida, confundida. Sentí perder el sentido y era justo lo contrario a eso que, con tanta fe como pude, seis meses atrás había pedido para mi vida. Claridad, norte, dirección; también totalidad, unión, paz. Hacia afuera y hacia adentro, un faro y una brújula, pero más perdida que nunca me encontré.
+
+Entonces culpé al amor. El que me derrumba completamente y me hace sentir que pierdo el norte, pues no me encuentro, incluso me desconozco, yo que siempre alardeé conocerme. Fue un amor que por ser pasajero no dejó de ser real. Para mi se sintió tan verdadero, pues amplió mi consciencia, me hizo reconciliar con el deseo y abrirme a nuevos sueños. Lo disfruté, aprendí, y aunque pasó como un chasquido fue el espejo más ancho hasta ahora.
+
+Es que así he comprendido mis relaciones, no solo las románticas. Todo lo que el otro me hace, habla más de sí que de mí. Pero todo lo que me hace sentir dice mucho, mucho de mí. Y es que lo que sentimos hacia otros siempre nos dice algo. Puede ser una noción radical que a veces no resuena, pero pediré un minuto de argumentación para que mediante mi historia me pueda usted entender.
+
+Le cuento que cuando estuve en Madrid conocí una mujer sensacional. Con una risa preciosa que salía con frecuencia, sobre todo por su propio humor, que a todas nos hacía zarandear. Nos conocimos una tarde de junio, y tan pocos fueron los días que, antes de que empezara verano, yo no conseguía sacarla un segundo de mi cabeza. Ahí habitaba, en las ideas que por cercanía semántica me inventé con lo poco que la conocía. Ese día hablamos horas, y sus palabras me atravesaban la mente y el alma, como pocas veces pasa.
+
+Para ese entonces mi visita estaba acabándose pues debía volver a Colombia, y ella vivía algo lejos de donde me estaba quedando, sin embargo el destino nos cruzó varias veces y cada encuentro fue más íntimo, aun sin ver ni la sombra de un beso. Pero es que el amor paraliza, vuelve cobarde hasta los más valientes, y el anhelo hace que conspiremos a su favor; deseamos tanto que se dé, que inventamos historias antes de que suceda, y el chance de que exista puede incluso devolvernos las ganas de vivir.
+
+Tres veces nos encontramos y pensé que así iba a quedar, cuando horas antes de mi vuelo tocaron la puerta, y tan hermosa como siempre apareció. Tenía una flor de alelí en su cabellera, una falda que dejaba ver sus muslos morenos y una mirada inefable, que atravesó todas mis capas y con la profundidad del océano se posó sobre mí, abrumadora. Dijimos poco, reímos más, y perdí el vuelo mientras movía mis cosas a su apartamento de soltera y como quien va de cabeza, me imaginé una vida con ella.
+
+Dos personas aparentemente maduras, que aunque sabían que el tiempo era limitado por cuestiones laborales y ocho mil kilómetros de Atlántico, decidieron omitir el adiós pensando solo en el momento. Entonces ya no supe qué quería yo. Como era de esperarse, no nos conocíamos y las cosas se sentían sumamente extrañas. Yo solo quería estar con ella, sin importar nada, como quien se abraza al resplandor del amor aunque sea por un segundo, aunque sea solo apariencia.
+
+Consciente de lo efímero, me negué a pedirle más claridades que las que acordamos en esas fugas pasionales. Yo, embriagada de amor, dejé pasar todo aquello que no se sentía como tal, excusando la incompatibilidad por el temor de vivir sin ella. Además me sentía tan cómoda en su espacio, con su gato, replicando sus costumbres pues en ella encontré tanta claridad. Tenía un trabajo excelente, que le permitía tener tiempo para dedicarse a sus negocios relacionados con la planta maestra marihuana. Y se acercaba a la vida con tanta calma, confiaba en Dios y hablaba con él, pero sacaba un chocolate gratis para mí de cada supertienda a la que entrábamos.
+
+Era una dama, así la percibí, ojalá yo hubiera sido lo mismo para ella. Y es que el plan siempre fue estar juntas en verano, pero internamente creí que podría ser diferente. Su enfoque estaba en sí misma, y tal vez por eso no tuvo reparo en desperdiciar mi amor; también sobre-pienso a veces que quizás mi caos no fue de su agrado, y que tratar de ser transparente ante sus ojos hizo que ellos me atravesaran y solo siguieran su camino. Un camino en el que yo no estoy, pues mi única seguridad era la incertidumbre de mis pasos.
+
+A pesar de los pendientes en mi país, juro que si me hubiera dicho que me quedara a su lado, no hubiera dudado un segundo en hacerlo; no hubiera dudado en cambiar todos mis planes si ella quería, si ella me quería a su lado. La cuestión que tales palabras no llegaron y de hecho, en mi regreso hubo discordias de mi parte por su indiferencia, que ardió como hielo tanto tiempo como ardió mi amor.
+
+La quise de verdad, pero su rechazo fue absurdo incluso para una romántica como yo, que tantas veces se olvida de la dignidad bajo los pretextos del corazón, y aunque intenté buscarla, luego se hizo evidente que para ella no fue tan especial como lo fue para mí.
+
+Regresé a Colombia con un vacío enorme, cargando en la maleta el devastador peso mis propias expectativas. Durante semanas me pregunté qué había hecho mal, y me enredé en juzgamientos carentes de compasión, esos que solo la propia mente consigue con las palabras más afiladas, que no se encuentran con tanta rudeza en nadie más que en uno.
+
+Pero en medio de ese duelo, una mañana mientras entraba en mi edificio me paré a ver un arbusto que tenía apenas una flor magenta. Me detuve sin saber muy bien por qué y aquel último retoño se meció en el vacío y tocó el suelo, donde otros pétalos le dieron la bienvenida a la descomposición. Y entonces en la brisa, como susurrando, aquel alelí me lo dijo.
+
+No fue aquella mujer, su indiferencia, ni mis errores. Era el hecho de que por primera vez alguien me había mostrado todo lo que yo era capaz de sentir, de desear y de soñar. A su vez comprendí que no había mal en sentirme perdida, porque al hacerlo, descubrí los rincones de mí alma que había olvidado explorar; tal como el alelí, no había perdido sus flores ni su destino, más bien las soltó con la garantía y la certeza de que de su interior volverían a surgir los preciosos pétalos del amor.
+
+Entonces de la tierra surgió la radiación vibrante de todas las flores que parecían estar muertas, de su brillo se llenó mi corazón, descubriendo que todo eso que entrega y siente es solamente suyo, y que, aunque en su momento el desamor se sintió infernal, el dolor tal como la vida es temporal y por lo tanto mutable, amigo de quienes lo abrazan y aceptan como condición necesaria de la humanidad.
