@@ -1,127 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre mí - PsiqueSofía</title>
-  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Sobre mí</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Questrial', sans-serif;
-      background-image: url('images/sobremifondo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-      text-align: center;
+      font-family: Arial, sans-serif;
     }
-
-    header {
-      padding: 60px 20px 20px;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-
-    .slider {
-      width: 80%;
-      max-width: 800px;
-      height: 300px;
-      margin: 40px auto;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      background-color: rgba(0,0,0,0.4);
+    .tabs {
       display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
+      gap: 20px;
+      margin-top: 30px;
     }
-
-    .slide {
+    .tab-button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tab-button.active {
+      background-color: #999;
+      color: white;
+    }
+    .tab-content {
       display: none;
-      width: 100%;
-      height: 100%;
+      margin-top: 20px;
       padding: 20px;
-      box-sizing: border-box;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
     }
-
-    .slide.active {
+    .tab-content.active {
       display: block;
     }
-
-    .slide img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .nav-buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-
-    .nav-buttons button {
-      background: rgba(255,255,255,0.5);
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 1em;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .nav-buttons button:hover {
-      background: rgba(255,255,255,0.8);
+    .titulo-img {
+      max-width: 300px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Sobre mí</h1>
-  </header>
 
-  <div class="slider">
-    <div class="slide active">
-      <p>Hola, mi nombre es Sofía, y más que psicóloga me considero exploradora del alma.</p>
-    </div>
-    <div class="slide">
-      <p>He trabajado mayormente en psicología social, con comunidad, y he conocido la fortaleza de las personas.</p>
-    </div>
-    <div class="slide">
-      <img src="images/yo animada.jpeg" alt="Yo animada">
-    </div>
-    <div class="nav-buttons">
-      <button onclick="plusSlides(-1)">&#10094;</button>
-      <button onclick="plusSlides(1)">&#10095;</button>
-    </div>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('psicologa')">Psicóloga</button>
+    <button class="tab-button" onclick="showTab('sobre-mi')">Sobre mí</button>
+    <button class="tab-button" onclick="showTab('data-tech')">Data & Tech</button>
+  </div>
+
+  <div id="psicologa" class="tab-content active">
+    <img src="ruta/de/tu/titulo.jpg" alt="Título de Psicología" class="titulo-img">
+    <p>
+      Soy psicóloga con enfoque transpersonal y comunitario. Creo que en nuestros territorios hay muchas formas en las que podemos tratar los asuntos de la psique, o del alma.  
+      Mi tesis estuvo enfocada en estas uniones, desde las plantas sagradas y los asuntos de la consciencia.  
+      👉 <a href="LINK_O_ARCHIVO_TESIS.pdf" target="_blank">Leer mi tesis</a>
+    </p>
+  </div>
+
+  <div id="sobre-mi" class="tab-content">
+    <p>Aquí irá el contenido general sobre ti.</p>
+  </div>
+
+  <div id="data-tech" class="tab-content">
+    <p>Aquí irá tu experiencia con datos y tecnología.</p>
   </div>
 
   <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
+    function showTab(tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-      });
-    }
+      contents.forEach(c => c.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
 
-    function plusSlides(n) {
-      slideIndex = (slideIndex + n + slides.length) % slides.length;
-      showSlide(slideIndex);
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
     }
   </script>
+
 </body>
 </html>
