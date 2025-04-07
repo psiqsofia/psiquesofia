@@ -1,12 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Blog y escritos - PsiqueSofía</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jardín de palabras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Questrial', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 60px 20px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #fffbe7;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .garden-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .leaf-card {
+      background-color: rgba(87, 160, 95, 0.85);
+      border-radius: 20px;
+      padding: 20px;
+      width: 240px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .leaf-card:hover {
+      transform: scale(1.03);
+    }
+
+    .leaf-card h2 {
+      font-size: 1.2em;
+      color: #f5ffe2;
+      margin: 0;
+    }
+
+    #content {
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      white-space: pre-wrap;
+    }
+
+    a {
+      color: #fffad1;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Blog y escritos</h1>
-  <p>Pronto compartiré mis textos, cuentos y reflexiones.</p>
-  <a href="index.html">Volver al inicio</a>
+
+  <video autoplay muted loop class="video-background">
+    <source src="images/blogfondo.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <header>
+    <h1>Bienvenida a mi jardín de palabras</h1>
+  </header>
+
+  <div class="garden-container">
+    <div class="leaf-card" onclick="loadMarkdown('blog/delasPalabras.md')">
+      <h2>De las palabras</h2>
+    </div>
+    <div class="leaf-card" onclick="loadMarkdown('blog/micuento.md')">
+      <h2>Mi cuento</h2>
+    </div>
+    <div class="leaf-card" onclick="loadMarkdown('blog/algoquenose.md')">
+      <h2>Algo que no sé</h2>
+    </div>
+    <!-- Agrega más tarjetas aquí -->
+  </div>
+
+  <div id="content">
+    <p>Haz clic en una hoja para leer un escrito 🌿</p>
+  </div>
+
+  <script>
+    async function loadMarkdown(filePath) {
+      try {
+        const response = await fetch(filePath);
+        const markdown = await response.text();
+        const html = marked.parse(markdown);
+        document.getElementById('content').innerHTML = html;
+      } catch (error) {
+        document.getElementById('content').innerHTML = "<p>Error al cargar el escrito.</p>";
+      }
+    }
+  </script>
+
+  <!-- Incluye marked.js para convertir markdown a HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
