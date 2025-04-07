@@ -8,7 +8,7 @@ Hay redención en nuestros pasos, y tal vez somos redentores de las mismas perso
 
 Hoy yo puedo decidir librarme de tomar las mismas decisiones que me preceden, no solo en una vida paralela sino en esta misma realidad, en este plano en el que existo, en el que pienso, en el que he sentido, en la única experiencia que conozco y conoceré, y a pesar de todos los intentos que he tomado. Intentos, porque no creo que existan los errores ni los aciertos. Intentos, porque ellos, como tú y como yo estamos habitando este mundo por primera vez, tratando de hacer lo mejor que pueda con lo que se nos ofreció. Y lo sabemos, que la vida no ha sido fácil para ninguno.
 
-Y que no hay hubiera, pues esta es la vida que conocemos. La que por fortuna o por azar nos tocó. La oportunidad que tenemos para materializarnos, para tocar este mundo y percibirlo, incluso, si somos valientes, hasta transformarlo. Y entonces lo admito: mi redención la comparto contigo.
+Y que no hay *hubiera*, pues esta es la vida que conocemos. La que por fortuna o por azar nos tocó. La oportunidad que tenemos para materializarnos, para tocar este mundo y percibirlo, incluso, si somos valientes, hasta transformarlo. Y entonces lo admito: mi redención la comparto contigo.
 
 Hay sin embargo un diablito que me toca la llaga aun abierta, tal vez por negligencia, o de pronto hasta ahora me di cuenta de que sangraba. Tal vez, como tú, hermana, también cargo dolores que desconozco, que me hacen actuar, por los cuales todavía yo respiro, por los cuales lloro, por donde aún suplico.
 
