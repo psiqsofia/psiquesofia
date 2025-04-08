@@ -30,7 +30,7 @@
     }
 
     .sidebar {
-      width: 300px;
+      width: 280px;
       background: rgba(255, 255, 255, 0.3);
       padding: 1rem;
       overflow-y: auto;
@@ -39,10 +39,11 @@
 
     .content {
       flex-grow: 1;
-      padding: 2rem;
+      max-width: 75%;
+      padding: 2rem 3rem;
       overflow-y: auto;
       color: white;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.35);
     }
 
     .search-box {
@@ -87,9 +88,7 @@
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Buscar por título o tag...">
     </div>
-    <div id="entryList">
-      <!-- JS inyectará aquí los títulos -->
-    </div>
+    <div id="entryList"></div>
   </div>
 
   <div class="content" id="contentArea">
@@ -100,21 +99,21 @@
 
 <script>
   const entries = [
-    { title: "Enfermedad social", file: "enfermedad-social.md", tags: ["enfermedad", "medicina", "sanación", "política"] },
-    { title: "Amor y mar", file: "amor-y-mar.md", tags: [] },
-    { title: "Anormal", file: "anormal.md", tags: [] },
-    { title: "No hay mal que por bien no venga", file: "cuento.md", tags: [] },
-    { title: "De las palabras", file: "de-las-palabras.md", tags: [] },
-    { title: "Dolor y crear", file: "dolor-y-crear.md", tags: [] },
-    { title: "La mente y el alma", file: "la-mente-y-el-alma.md", tags: [] },
-    { title: "Mostrar(se)", file: "mostrarse.md", tags: [] },
-    { title: "Cultura de paz", file: "paz.md", tags: [] },
-    { title: "Psicopolítica", file: "psicopolítica.md", tags: [] },
-    { title: "Psiquedélico", file: "psiquedelico.md", tags: [] },
-    { title: "Redención", file: "redención.md", tags: [] },
-    { title: "Salud mental", file: "salud-mental.md", tags: [] },
-    { title: "Ser", file: "ser.md", tags: [] },
-    { title: "Transpersonal", file: "transpersonal.md", tags: [] },
+    { title: "Enfermedad social", file: "enfermedad-social.html", tags: ["enfermedad", "medicina", "sanación", "política"] },
+    { title: "El amor y la mar", file: "amor-y-mar.html", tags: ["mar", "amor"] },
+    { title: "Anormal", file: "anormal.html", tags: ["identidad"] },
+    { title: "No hay mal que por bien no venga", file: "cuento.html", tags: ["cuento", "vida"] },
+    { title: "De las palabras", file: "de-las-palabras.html", tags: ["lenguaje"] },
+    { title: "Doler y creer", file: "doler-y-creer.html", tags: ["fe", "esperanza", "introspección", "dolor", "sufrimiento"] },
+    { title: "La mente y el alma", file: "la-mente-y-el-alma.html", tags: ["alma", "psicología"] },
+    { title: "Mostrar(se)", file: "mostrarse.html", tags: ["autenticidad"] },
+    { title: "Cultura de paz", file: "paz.html", tags: ["paz", "sociedad"] },
+    { title: "Psicopolítica", file: "psicopolitica.html", tags: ["poder", "psicología"] },
+    { title: "Psiquedélico", file: "psiquedelico.html", tags: ["conciencia"] },
+    { title: "Redención", file: "redencion.html", tags: ["culpa", "perdón"] },
+    { title: "Salud mental", file: "salud-mental.html", tags: ["salud"] },
+    { title: "Ser", file: "ser.html", tags: ["existencia"] },
+    { title: "Transpersonal", file: "transpersonal.html", tags: ["espiritualidad"] }
   ];
 
   const listContainer = document.getElementById("entryList");
@@ -143,8 +142,10 @@
     const res = await fetch(`blog/${entry.file}`);
     const text = await res.text();
 
-    const cleaned = text.replace(/---[\s\S]*?---/, "").trim();
-    contentArea.innerHTML = `<h2>${entry.title}</h2><p>${cleaned.replace(/\n/g, "</p><p>")}</p>`;
+    const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+    const cleaned = contentMatch ? contentMatch[1].trim() : text;
+
+    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned;
   }
 
   searchInput.addEventListener("input", e => renderList(e.target.value));
