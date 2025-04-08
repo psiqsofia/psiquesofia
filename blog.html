@@ -1,119 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jardín de Palabras</title>
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <style>
-    * {
-      font-family: 'Questrial', sans-serif;
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body, html {
+      font-family: 'Questrial', sans-serif;
       height: 100%;
       overflow: hidden;
     }
-    video {
+
+    video#bg-video {
       position: fixed;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0;
       min-width: 100%;
       min-height: 100%;
-      object-fit: cover;
       z-index: -1;
+      object-fit: cover;
     }
-    header {
-      background: rgba(255, 255, 255, 0.7);
-      padding: 2rem;
-      text-align: center;
-      font-size: 2rem;
-      color: #2d572c;
-    }
+
     .container {
       display: flex;
-      height: calc(100% - 120px);
+      height: 100vh;
+      backdrop-filter: brightness(0.9) blur(2px);
     }
-    .cards {
-      width: 30%;
+
+    .sidebar {
+      width: 300px;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 1rem;
       overflow-y: auto;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.6);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      align-content: flex-start;
+      border-right: 2px solid #ccc;
     }
-    .card {
-      background: #cfe8cf;
-      border-radius: 1rem;
-      padding: 1rem;
-      width: 100%;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      background: #b6ddb6;
-    }
+
     .content {
-      width: 70%;
+      flex-grow: 1;
       padding: 2rem;
       overflow-y: auto;
-      background: rgba(255, 255, 255, 0.8);
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
     }
-    .content pre {
-      white-space: pre-wrap;
+
+    .search-box {
+      margin-bottom: 1rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+    }
+
+    .entry-title {
+      margin: 0.5rem 0;
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .entry-title:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .entry-title.active {
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.4);
     }
   </style>
 </head>
 <body>
-  <video autoplay muted loop>
-    <source src="images/blogfondo.mp4" type="video/mp4">
-    Tu navegador no soporta videos de fondo.
-  </video>
 
-  <header>Bienvenida a mi jardín de palabras</header>
+<video autoplay muted loop id="bg-video">
+  <source src="images/blogfondo.mp4" type="video/mp4">
+  Tu navegador no soporta el video.
+</video>
 
-  <div class="container">
-    <div class="cards">
-      <!-- Tarjetas de blog manuales -->
-      <div class="card" onclick="loadPost('amor-y-mar.md')">Amor y mar</div>
-      <div class="card" onclick="loadPost('anormal.md')">Anormal</div>
-      <div class="card" onclick="loadPost('cuento.md')">Cuento</div>
-      <div class="card" onclick="loadPost('de-las-palabras.md')">De las palabras</div>
-      <div class="card" onclick="loadPost('doler-y-creer.md')">Doler y creer</div>
-      <div class="card" onclick="loadPost('enfermedad-social.md')">Enfermedad social</div>
-      <div class="card" onclick="loadPost('la-mente-y-el-alma.md')">La mente y el alma</div>
-      <div class="card" onclick="loadPost('mostrarse.md')">Mostrarse</div>
-      <div class="card" onclick="loadPost('paz.md')">Paz</div>
-      <div class="card" onclick="loadPost('psicopolítica.md')">Psicopolítica</div>
-      <div class="card" onclick="loadPost('psiquedelico.md')">Psiquedélico</div>
-      <div class="card" onclick="loadPost('redención.md')">Redención</div>
-      <div class="card" onclick="loadPost('salud-mental.md')">Salud mental</div>
-      <div class="card" onclick="loadPost('ser.md')">Ser</div>
-      <div class="card" onclick="loadPost('transpersonal.md')">Transpersonal</div>
+<div class="container">
+  <div class="sidebar">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar por título o tag...">
     </div>
-    <div class="content" id="content">
-      <p>Haz clic en una hoja para leer un escrito 🌿</p>
+    <div id="entryList">
+      <!-- JS inyectará aquí los títulos -->
     </div>
   </div>
 
-  <script>
-    function loadPost(filename) {
-      fetch('blog/' + filename)
-        .then(response => response.text())
-        .then(text => {
-          document.getElementById("content").innerHTML = "<pre>" + text + "</pre>";
-        })
-        .catch(err => {
-          document.getElementById("content").innerHTML = "<p>No se pudo cargar el escrito.</p>";
-        });
-    }
-  </script>
+  <div class="content" id="contentArea">
+    <h2>Bienvenida a mi jardín de palabras 🌼</h2>
+    <p>Haz clic en un título para leerlo aquí.</p>
+  </div>
+</div>
+
+<script>
+  const entries = [
+    { title: "Enfermedad social", file: "enfermedad-social.md", tags: ["enfermedad", "medicina", "sanación", "política"] },
+    { title: "Amor y mar", file: "amor-y-mar.md", tags: [] },
+    { title: "Anormal", file: "anormal.md", tags: [] },
+    { title: "No hay mal que por bien no venga", file: "cuento.md", tags: [] },
+    { title: "De las palabras", file: "de-las-palabras.md", tags: [] },
+    { title: "Dolor y crear", file: "dolor-y-crear.md", tags: [] },
+    { title: "La mente y el alma", file: "la-mente-y-el-alma.md", tags: [] },
+    { title: "Mostrar(se)", file: "mostrarse.md", tags: [] },
+    { title: "Cultura de paz", file: "paz.md", tags: [] },
+    { title: "Psicopolítica", file: "psicopolítica.md", tags: [] },
+    { title: "Psiquedélico", file: "psiquedelico.md", tags: [] },
+    { title: "Redención", file: "redención.md", tags: [] },
+    { title: "Salud mental", file: "salud-mental.md", tags: [] },
+    { title: "Ser", file: "ser.md", tags: [] },
+    { title: "Transpersonal", file: "transpersonal.md", tags: [] },
+  ];
+
+  const listContainer = document.getElementById("entryList");
+  const contentArea = document.getElementById("contentArea");
+  const searchInput = document.getElementById("searchInput");
+
+  function renderList(filter = "") {
+    listContainer.innerHTML = "";
+    entries
+      .filter(entry => entry.title.toLowerCase().includes(filter.toLowerCase()) || 
+                       entry.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())))
+      .forEach(entry => {
+        const el = document.createElement("div");
+        el.className = "entry-title";
+        el.textContent = entry.title;
+        el.onclick = () => loadContent(entry, el);
+        listContainer.appendChild(el);
+      });
+  }
+
+  async function loadContent(entry, el) {
+    const allTitles = document.querySelectorAll(".entry-title");
+    allTitles.forEach(t => t.classList.remove("active"));
+    el.classList.add("active");
+
+    const res = await fetch(`blog/${entry.file}`);
+    const text = await res.text();
+
+    const cleaned = text.replace(/---[\s\S]*?---/, "").trim();
+    contentArea.innerHTML = `<h2>${entry.title}</h2><p>${cleaned.replace(/\n/g, "</p><p>")}</p>`;
+  }
+
+  searchInput.addEventListener("input", e => renderList(e.target.value));
+
+  renderList();
+</script>
+
 </body>
 </html>
+
