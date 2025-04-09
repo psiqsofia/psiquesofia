@@ -12,6 +12,7 @@
       font-family: 'Questrial', sans-serif;
       height: 100%;
       overflow: hidden;
+      font-size: 1.25rem;
     }
 
     video#bg-video {
@@ -74,6 +75,30 @@
       font-weight: bold;
       background-color: rgba(255, 255, 255, 0.4);
     }
+
+    .top-button {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background-color: #ffffffcc;
+      color: #000;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .random-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffffffcc;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -85,6 +110,7 @@
 
 <div class="container">
   <div class="sidebar">
+    <a class="top-button" href="/">⬅ Volver a la página principal</a>
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Buscar por título o tag...">
     </div>
@@ -99,21 +125,21 @@
 
 <script>
   const entries = [
-    { title: "Enfermedad social", file: "enfermedad-social.html", tags: ["enfermedad", "medicina", "sanación", "política"] },
-    { title: "El amor y la mar", file: "amor-y-mar.html", tags: ["mar", "amor"] },
-    { title: "Anormal", file: "anormal.html", tags: ["identidad"] },
-    { title: "No hay mal que por bien no venga", file: "cuento.html", tags: ["cuento", "vida"] },
-    { title: "De las palabras", file: "de-las-palabras.html", tags: ["lenguaje"] },
-    { title: "Doler y creer", file: "doler-y-creer.html", tags: ["fe", "esperanza", "introspección", "dolor", "sufrimiento"] },
-    { title: "La mente y el alma", file: "la-mente-y-el-alma.html", tags: ["alma", "psicología"] },
-    { title: "Mostrar(se)", file: "mostrarse.html", tags: ["autenticidad"] },
-    { title: "Cultura de paz", file: "paz.html", tags: ["paz", "sociedad"] },
-    { title: "Psicopolítica", file: "psicopolitica.html", tags: ["poder", "psicología"] },
-    { title: "Psiquedélico", file: "psiquedelico.html", tags: ["conciencia"] },
-    { title: "Redención", file: "redencion.html", tags: ["culpa", "perdón"] },
-    { title: "Salud mental", file: "salud-mental.html", tags: ["salud"] },
-    { title: "Ser", file: "ser.html", tags: ["existencia"] },
-    { title: "Transpersonal", file: "transpersonal.html", tags: ["espiritualidad"] }
+    { title: "Amor y mar", file: "amor-y-mar.html", tags: [] },
+    { title: "Anormal", file: "anormal.html", tags: [] },
+    { title: "No hay mal que por bien no venga", file: "cuento.html", tags: [] },
+    { title: "De las palabras", file: "de-las-palabras.html", tags: [] },
+    { title: "Doler y creer", file: "doler-y-creer.html", tags: [] },
+    { title: "Enfermedad social", file: "enfermedad-social.html", tags: [] },
+    { title: "Insurrección", file: "insurreccion.html", tags: [] },
+    { title: "La mente y el alma", file: "la-mente-y-el-alma.html", tags: [] },
+    { title: "Psicopolítica", file: "psicopolitica.html", tags: [] },
+    { title: "Psiquedélico", file: "psiquedelico.html", tags: [] },
+    { title: "Redención", file: "redencion.html", tags: [] },
+    { title: "Respirar", file: "respirar.html", tags: [] },
+    { title: "Salud mental", file: "salud-mental.html", tags: [] },
+    { title: "Ser", file: "ser.html", tags: [] },
+    { title: "Transpersonal", file: "transpersonal.html", tags: [] }
   ];
 
   const listContainer = document.getElementById("entryList");
@@ -123,8 +149,7 @@
   function renderList(filter = "") {
     listContainer.innerHTML = "";
     entries
-      .filter(entry => entry.title.toLowerCase().includes(filter.toLowerCase()) || 
-                       entry.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())))
+      .filter(entry => entry.title.toLowerCase().includes(filter.toLowerCase()))
       .forEach(entry => {
         const el = document.createElement("div");
         el.className = "entry-title";
@@ -145,7 +170,15 @@
     const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
     const cleaned = contentMatch ? contentMatch[1].trim() : text;
 
-    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned;
+    const randomBtn = `<button class='random-btn' onclick='showRandomEntry()'>🌿 Leer otro aleatorio</button>`;
+    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn;
+  }
+
+  function showRandomEntry() {
+    const random = entries[Math.floor(Math.random() * entries.length)];
+    const allTitles = document.querySelectorAll(".entry-title");
+    const match = Array.from(allTitles).find(t => t.textContent === random.title);
+    if (match) match.click();
   }
 
   searchInput.addEventListener("input", e => renderList(e.target.value));
@@ -155,4 +188,3 @@
 
 </body>
 </html>
-
