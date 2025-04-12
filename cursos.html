@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cursos - PsiqueSofía</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cursos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Questrial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      color: #2e7d32;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      color: #444;
+    }
+
+    .curso-card {
+      display: flex;
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 2rem auto;
+      max-width: 900px;
+      transition: transform 0.3s ease;
+    }
+
+    .curso-card:hover {
+      transform: scale(1.01);
+    }
+
+    .curso-card img {
+      width: 300px;
+      object-fit: cover;
+    }
+
+    .curso-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .curso-content h2 {
+      margin-top: 0;
+      color: #1b5e20;
+    }
+
+    .curso-content p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .curso-content a {
+      text-decoration: none;
+      background-color: #388e3c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      align-self: start;
+      transition: background-color 0.3s ease;
+    }
+
+    .curso-content a:hover {
+      background-color: #2e7d32;
+    }
+
+    @media (max-width: 768px) {
+      .curso-card {
+        flex-direction: column;
+      }
+
+      .curso-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <h1>Cursos</h1>
-  <p>Estamos cocinando ideas hermosas para compartir.</p>
-  <a href="index.html">Volver al inicio</a>
+  <p class="description">
+    Los cursos que encontrarás aquí están diseñados para ayudarte a vivir más alineado contigo mismo, reconectarte con tu sabiduría interior y caminar hacia una vida más plena, auténtica y consciente.
+  </p>
+
+  <div class="curso-card">
+    <img src="../images/emecs.jpg" alt="Imagen del curso Estar mejor en cuatro semanas">
+    <div class="curso-content">
+      <h2>Estar mejor en cuatro semanas</h2>
+      <p>
+        Bienvenido a este espacio transformador. Aquí encontrarás las herramientas para mejorar realmente tu vida. Cada episodio te guiará para comprender el verdadero significado de lo que estás viviendo...
+      </p>
+      <a href="curso1.html">Ver curso</a>
+    </div>
+  </div>
+
 </body>
 </html>
