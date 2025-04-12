@@ -79,20 +79,28 @@
       margin-bottom: 40px;
     }
 
-    .imagenes-cv img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
+   .imagenes-cv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
 
-    .img-cv {
-      max-width: 400px;
-    }
+.imagenes-cv img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 
-    .img-titulo {
-      max-width: 350px;
-    }
+.img-cv {
+  width: 320px;
+}
+
+.img-titulo {
+  width: 280px;
+}
 
     @media (max-width: 768px) {
       h1 {
@@ -117,10 +125,27 @@
       .img-cv, .img-titulo {
         max-width: 90%;
       }
-    }
+    }.volver-inicio {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #d0f0e0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.volver-inicio:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
   </style>
 </head>
 <body>
+  <a href="index.html" class="volver-inicio">← Volver al inicio</a>
   <div class="intro">
     <h1>Mi CV</h1>
     <p>Aquí puedes ver una versión general de mi perfil profesional.<br>Si quieres conocer más a fondo cada una de mis experiencias y proyectos, haz clic en el botón de abajo.</p>
