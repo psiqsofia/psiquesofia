@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi CV · PsiqueSofía</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Questrial', sans-serif;
+      background-image: url('images/fondoindex.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #d0f0e0;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      background-color: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    img.cv {
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      display: block;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .botones {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .botones a {
+      text-decoration: none;
+      color: #2e7d32;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .botones a:hover {
+      background-color: #c8e6c9;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .botones a {
+        width: 80%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Mi CV</h1>
+  <p>Aquí puedes ver una versión general de mi perfil profesional.  
+  Si quieres conocer más a fondo cada una de mis experiencias y proyectos, haz clic en el botón de abajo.</p>
+
+  <img src="images/cv.png" alt="Mi currículum" class="cv" />
+
+  <div class="botones">
+    <a href="assets/cv_espanol.pdf" download>📄 Descargar CV en español</a>
+    <a href="assets/cv_english.pdf" download>📄 Download CV in English</a>
+    <a href="experiencia.html">✨ ¿Quieres saber más de mi experiencia?</a>
+    <a href="index.html">← Volver al inicio</a>
+  </div>
+</body>
+</html>
 
