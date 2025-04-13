@@ -242,72 +242,49 @@
 
   </head>
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="sobre-mi.html">Sobre mí</a></li>
-        <li><a href="blog.html">Blog y escritos</a></li>
-        <li><a href="podcast.html">Podcast</a></li>
-        <li><a href="cursos.html">Cursos</a></li>
-      </ul>
-    </nav>
+<body>
+  <nav>
+    <ul>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="blog.html">Blog y escritos</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="cursos.html">Cursos</a></li>
+    </ul>
+  </nav>
 
-    <div class="contenido">
-     <header class="perfil-profesional">
-  <a href="cv.html" class="btn-cv">📄 CV y Portafolio</a>
-       <!-- BOTONES DE CONTACTO -->
-<div style="margin-top: 30px; text-align: center;">
-  <a href="mailto:julianas.gommezh@javeriana.edu.com" class="boton-contacto">Contáctame por Email</a>
-  <a href="https://wa.me/573187662368" target="_blank" class="boton-contacto">Escríbeme por WhatsApp</a>
-</div>
+  <div class="contenido">
+    <header class="perfil-profesional">
+      <a href="cv.html" class="btn-cv">📄 CV y Portafolio</a>
+      <a href="#formulario-contacto" class="boton">Contáctame</a>
 
-<!-- SECCIÓN DE CONTACTO -->
-<section id="contacto" style="margin-top: 50px; text-align: center;">
-  <h2 style="font-family: 'Questrial', sans-serif; font-size: 28px;">Contáctame 🌼</h2>
-  <p style="font-size: 16px; max-width: 600px; margin: auto; font-family: 'Questrial', sans-serif;">
-    ¿Te gustaría colaborar o tienes una propuesta?  
-    Estoy disponible para proyectos creativos, análisis de datos, contenido y más.
-  </p>
-  <p style="margin-top: 10px;">
-    <strong>Email:</strong> <a href="julianas.gommezh@javeriana.edu.com"></a><br>
-    <strong>WhatsApp:</strong> <a href="https://wa.me/573187662368" target="_blank"></a>
-  </p>
-</section>
+      <div class="info-central">
+        <h1>PsiqueSofía</h1>
+        <p>Psicóloga, analista de datos, creadora</p>
+        <p>Psychologist, data analyst, creator</p>
+      </div>
 
-<!-- ESTILOS DEL BOTÓN -->
-<style>
-.boton-contacto {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  background-color: #5eaa7d;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  font-family: 'Questrial', sans-serif;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-  transition: background-color 0.3s, transform 0.2s;
-}
-.boton-contacto:hover {
-  background-color: #3c805a;
-  transform: scale(1.05);
-}
-</style>
+      <div class="avatar-lateral">
+        <img src="images/avatar1.png" alt="Avatar profesional" class="avatar-flotante" />
+      </div>
+    </header>
 
-
-  <div class="info-central">
-    <h1>PsiqueSofía</h1>
-    <p>Psicóloga, analista de datos, creadora</p>
+    <!-- FORMULARIO DE CONTACTO FUERA DEL HEADER 👇 -->
+    <section id="formulario-contacto" style="text-align: center; margin-top: 60px;">
+      <h2 style="font-family: 'Questrial', sans-serif;">¿Quieres escribirme? 🌻</h2>
+      <form action="https://formspree.io/f/xpwpbern" method="POST" style="max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 10px;">
+        <input type="text" name="name" placeholder="Tu nombre" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+        <input type="email" name="_replyto" placeholder="Tu email" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+        <textarea name="message" placeholder="Tu mensaje..." required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;"></textarea>
+        <button type="submit" style="background-color: #5eaa7d; color: white; padding: 10px; border: none; border-radius: 20px; font-family: 'Questrial', sans-serif; cursor: pointer;">Enviar mensaje</button>
+      </form>
+    </section>
   </div>
 
-  <div class="avatar-lateral">
-    <img src="images/avatar1.png" alt="Avatar profesional" class="avatar-flotante" />
-  </div>
-</header>
 
 
     <footer>
       <p>© 2025 PsiqueSofía · Creado con 💛</p>
     </footer>
+ 
   </body>
 </html>
