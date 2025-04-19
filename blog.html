@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -88,7 +88,7 @@
       font-weight: bold;
     }
 
-    .random-btn {
+    .random-btn, .related-btn {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.5rem 1rem;
@@ -99,35 +99,37 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     @media (max-width: 768px) {
-    .content {
-      padding: 1rem;
-    }
+      .content {
+        padding: 1rem;
+      }
 
-    h1 {
-      font-size: 2rem;
-    }
+      h1 {
+        font-size: 2rem;
+      }
 
-    .intro {
-      font-size: 1rem;
-    }
+      .intro {
+        font-size: 1rem;
+      }
 
-    .course-card {
-      margin: 1rem 0;
-    }
+      .course-card {
+        margin: 1rem 0;
+      }
 
-    .course-title {
-      font-size: 1.3rem;
-    }
+      .course-title {
+        font-size: 1.3rem;
+      }
 
-    .course-description {
-      font-size: 0.95rem;
-    }
+      .course-description {
+        font-size: 0.95rem;
+      }
 
-    a {
-      font-size: 1rem;
+      a {
+        font-size: 1rem;
+      }
     }
-  }</style>
+  </style>
 </head>
 <body>
 
@@ -167,7 +169,7 @@
     { title: "Respirar", file: "respirar.html", tags: [] },
     { title: "Salud mental", file: "salud-mental.html", tags: [] },
     { title: "Ser", file: "ser.html", tags: [] },
-    { title: "Transpersonal", file: "transpersonal.html", tags: [] }
+    { title: "Transpersonal", file: "transpersonal.html", tags: [] },
     { title: "La Vegetariana", file: "vegetariana.html", tags: [] }
   ];
 
@@ -199,8 +201,22 @@
     const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
     const cleaned = contentMatch ? contentMatch[1].trim() : text;
 
-    const randomBtn = `<button class='random-btn' onclick='showRandomEntry()'>🌿 Leer otro aleatorio</button>`;
-    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn;
+    const randomBtn = `<button class='related-btn' onclick='showRandomEntry()'>🌿 Leer un texto relacionado</button>`;
+    
+    // Utterances comments (puedes cambiar 'tuusuario/tu-repo' por tu GitHub repo)
+    const comments = `
+      <div id="comments" style="margin-top: 2rem;">
+        <script src="https://utteranc.es/client.js"
+          repo="psiqsofia/psiqsofia.github.io"
+          issue-term="title"
+          label="comentario"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>`;
+
+    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn + comments;
   }
 
   function showRandomEntry() {
