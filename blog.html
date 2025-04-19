@@ -214,39 +214,6 @@
 
   renderList();
 
- async function loadContent(entry, el) {
-  const allTitles = document.querySelectorAll(".entry-title");
-  allTitles.forEach(t => t.classList.remove("active"));
-  el.classList.add("active");
-
-  const res = await fetch(`blog/${entry.file}`);
-  const text = await res.text();
-
-  const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-  const cleaned = contentMatch ? contentMatch[1].trim() : text;
-
-  const randomBtn = `<button class='random-btn' onclick='showRandomEntry()'>🌿 Leer otro aleatorio</button>`;
-
-  // Cargar los comentarios de Utterances con el único issue común
-  const comments = `
-    <div id="comments-container"></div>
-    <script src="https://utteranc.es/client.js"
-            repo="psiqsofia/psiqsofia"  <!-- Reemplaza con tu usuario y nombre de repositorio -->
-            issue-term="Comentarios del Blog"        <!-- Usamos un único issue para todo -->
-            label="comentarios"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-    </script>
-  `;
-
-  contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn + comments;
-}
-
-
-  searchInput.addEventListener("input", e => renderList(e.target.value));
-
-  renderList();
 </script>
 
 </body>
