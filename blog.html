@@ -213,10 +213,7 @@
   searchInput.addEventListener("input", e => renderList(e.target.value));
 
   renderList();
-</script>
 
-</body>
-</html>
  async function loadContent(entry, el) {
   const allTitles = document.querySelectorAll(".entry-title");
   allTitles.forEach(t => t.classList.remove("active"));
