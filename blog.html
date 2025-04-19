@@ -199,8 +199,7 @@
     const text = await res.text();
 
     const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-    const cleaned = contentMatch ? contentMatch[1].trim() : text;
-
+    const cleaned = contentMatch ? contentMatch[1].trim() : "<p>Error al cargar el contenido.</p>";
     const randomBtn = `<button class='related-btn' onclick='showRandomEntry()'>🌿 Leer un texto relacionado</button>`;
     
     // Utterances comments (puedes cambiar 'tuusuario/tu-repo' por tu GitHub repo)
