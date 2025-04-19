@@ -190,16 +190,23 @@
       });
   }
 
-  async function loadContent(entry, el) {
-    const allTitles = document.querySelectorAll(".entry-title");
-    allTitles.forEach(t => t.classList.remove("active"));
-    el.classList.add("active");
+ async function loadContent(entry, el) {
+  const allTitles = document.querySelectorAll(".entry-title");
+  allTitles.forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
 
+  try {
     const res = await fetch(`blog/${entry.file}`);
+    if (!res.ok) {
+      throw new Error(`Error al cargar el archivo: ${entry.file}`);
+    }
+
     const text = await res.text();
+    console.log(text); // Imprime el contenido que está recibiendo
 
     const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
     const cleaned = contentMatch ? contentMatch[1].trim() : "<p>Error al cargar el contenido.</p>";
+
     const randomBtn = `<button class='related-btn' onclick='showRandomEntry()'>🌿 Leer un texto relacionado</button>`;
     
     // Utterances comments (puedes cambiar 'tuusuario/tu-repo' por tu GitHub repo)
@@ -216,7 +223,12 @@
       </div>`;
 
     contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn + comments;
+  } catch (error) {
+    console.error("Error al cargar el contenido:", error);
+    contentArea.innerHTML = `<h2>Error al cargar el texto</h2><p>${error.message}</p>`;
   }
+}
+
 
   function showRandomEntry() {
     const random = entries[Math.floor(Math.random() * entries.length)];
