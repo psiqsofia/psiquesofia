@@ -168,7 +168,7 @@
     { title: "Salud mental", file: "salud-mental.html", tags: [] },
     { title: "Ser", file: "ser.html", tags: [] },
     { title: "Transpersonal", file: "transpersonal.html", tags: [] },
-    { title: "La vegetariana", file: "vegetariana.html", tags: [] }
+    { title: "La vegetariana", file: "vegetariana.html", tags: [], related: "anormal.html" }
   ];
 
   const listContainer = document.getElementById("entryList");
@@ -188,28 +188,34 @@
       });
   }
 
-  async function loadContent(entry, el) {
-    const allTitles = document.querySelectorAll(".entry-title");
-    allTitles.forEach(t => t.classList.remove("active"));
-    el.classList.add("active");
+ async function loadContent(entry, el) {
+  const allTitles = document.querySelectorAll(".entry-title");
+  allTitles.forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
 
-    const res = await fetch(`blog/${entry.file}`);
-    const text = await res.text();
+  const res = await fetch(`blog/${entry.file}`);
+  const text = await res.text();
 
-    const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-    const cleaned = contentMatch ? contentMatch[1].trim() : text;
+  const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+  const cleaned = contentMatch ? contentMatch[1].trim() : text;
 
-    const randomBtn = `<button class='random-btn' onclick='showRandomEntry()'>🌿 Leer otro aleatorio</button>`;
-    contentArea.innerHTML = `<h2>${entry.title}</h2>` + cleaned + randomBtn;
+  let relatedBtn = "";
+  if (entry.related) {
+    const relatedEntry = entries.find(e => e.file === entry.related);
+    if (relatedEntry) {
+      relatedBtn = `<button class='random-btn' onclick='loadContentByFile("${relatedEntry.file}")'>🌱 Leer texto relacionado</button>`;
+    }
   }
 
-  function showRandomEntry() {
-    const random = entries[Math.floor(Math.random() * entries.length)];
-    const allTitles = document.querySelectorAll(".entry-title");
-    const match = Array.from(allTitles).find(t => t.textContent === random.title);
-    if (match) match.click();
+  contentArea.innerHTML = `<h2>${entry.title}</h2>${cleaned}${relatedBtn}`;
+}
+function loadContentByFile(file) {
+  const entry = entries.find(e => e.file === file);
+  const el = Array.from(document.querySelectorAll(".entry-title")).find(e => e.textContent === entry.title);
+  if (entry && el) {
+    loadContent(entry, el);
   }
-
+}
   searchInput.addEventListener("input", e => renderList(e.target.value));
 
   renderList();
