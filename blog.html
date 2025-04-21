@@ -187,15 +187,13 @@
         listContainer.appendChild(el);
       });
   }
-
- async function loadContent(entry, el) {
+async function loadContent(entry, el, updateURL = true) {
   const allTitles = document.querySelectorAll(".entry-title");
   allTitles.forEach(t => t.classList.remove("active"));
-  el.classList.add("active");
+  if (el) el.classList.add("active");
 
   const res = await fetch(`blog/${entry.file}`);
   const text = await res.text();
-
   const contentMatch = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
   const cleaned = contentMatch ? contentMatch[1].trim() : text;
 
@@ -207,7 +205,16 @@
     }
   }
 
-  contentArea.innerHTML = `<h2>${entry.title}</h2>${cleaned}${relatedBtn}`;
+  contentArea.innerHTML = `<h2>${entry.title}</h2>${cleaned}${relatedBtn}<div id="comentarios"></div>`;
+
+  if (updateURL) {
+    const postParam = entry.file.replace(".html", "");
+    history.pushState({}, "", `?post=${postParam}`);
+  }
+
+  cargarComentarios(entry.file.replace(".html", ""));
+}
+
 }
 function loadContentByFile(file) {
   const entry = entries.find(e => e.file === file);
@@ -219,7 +226,33 @@ function loadContentByFile(file) {
   searchInput.addEventListener("input", e => renderList(e.target.value));
 
   renderList();
+function cargarComentarios(nombre) {
+  const repo = "psiqsofia/psiqsofia.github.io"; // 🔁 Cambia esto por tu repo de GitHub
+  const utterances = document.querySelector(".utterances");
+  if (utterances) utterances.remove();
 
+  const script = document.createElement("script");
+  script.src = "https://utteranc.es/client.js";
+  script.repo = repo;
+  script['issue-term'] = nombre;
+  script.label = "comentario";
+  script.theme = "github-light"; // o "github-dark" si prefieres
+  script.crossorigin = "anonymous";
+  script.async = true;
+  script.className = "utterances";
+
+  document.getElementById("comentarios").appendChild(script);
+}
+  window.onload = () => {
+  const params = new URLSearchParams(window.location.search);
+  const post = params.get("post");
+  if (post) {
+    const file = `${post}.html`;
+    const entry = entries.find(e => e.file === file);
+    const el = Array.from(document.querySelectorAll(".entry-title")).find(e => e.textContent === entry?.title);
+    if (entry) loadContent(entry, el, false);
+  }
+};
 </script>
 
 </body>
