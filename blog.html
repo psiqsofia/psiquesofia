@@ -255,6 +255,39 @@
       if (entry) loadContent(entry, el, false);
     }
   };
+   function cargarTexto(nombreArchivo, titulo) {
+    fetch('blog/' + nombreArchivo)
+      .then(response => response.text())
+      .then(texto => {
+        document.getElementById('contenido-escrito').innerHTML = `
+          <button onclick="volver()" class="boton-volver" style="display: none;">⬅ Volver al jardín</button>
+          <h2>${titulo}</h2>
+          <div>${texto}</div>
+        `;
+        if (window.innerWidth < 768) {
+          document.querySelector('.sidebar').style.display = 'none';
+          document.querySelector('.boton-volver').style.display = 'block';
+        }
+      });
+  }
+
+  function volver() {
+    document.querySelector('.sidebar').style.display = 'block';
+    document.getElementById('contenido-escrito').innerHTML = '';
+  }
+  .boton-volver {
+  background-color: #ffffffcc;
+  color: #4a7c59;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.boton-volver:hover {
+  background-color: #d0f0e0;
+}
 </script>
 
 
