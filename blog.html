@@ -128,6 +128,23 @@
     a {
       font-size: 1rem;
     }
+      @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
   }</style>
 </head>
 <body>
@@ -265,10 +282,7 @@
           <h2>${titulo}</h2>
           <div>${texto}</div>
         `;
-        if (window.innerWidth < 768) {
-          document.querySelector('.sidebar').style.display = 'none';
-          document.querySelector('.boton-volver').style.display = 'block';
-        }
+        
       });
   }
 
