@@ -185,14 +185,6 @@
 </div>
 <button class="mobile-toggle" onclick="toggleSidebar()">☰ Menú</button>
 
-<div class="container">
-  <div class="sidebar" id="sidebar">
-    <!-- tus links del blog aquí -->
-  </div>
-
-  <div class="content">
-    <!-- el resto de tu contenido aquí -->
-  </div>
 </div>
 <script>
   const entries = [
@@ -315,13 +307,10 @@
     document.querySelector('.sidebar').style.display = 'block';
     document.getElementById('contenido-escrito').innerHTML = '';
   }
-<script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-  }
-</script>
-</body> 
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('open');
+}
 </script>
 
 
