@@ -160,7 +160,7 @@
     flex-direction: column;
   }
 }
-  }</style>
+ </style>
 </head>
 <body>
 
@@ -168,9 +168,10 @@
   <source src="images/blogfondo.mp4" type="video/mp4">
   Tu navegador no soporta el video.
 </video>
+<button class="mobile-toggle" onclick="toggleSidebar()">☰ Menú</button>
 
 <div class="container">
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <a class="top-button" href="/">⬅ Volver a la página principal</a>
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Buscar por título o tag...">
@@ -183,9 +184,7 @@
     <p>Haz clic en un título para leerlo aquí.</p>
   </div>
 </div>
-<button class="mobile-toggle" onclick="toggleSidebar()">☰ Menú</button>
 
-</div>
 <script>
   const entries = [
     { title: "Amor y mar", file: "amor-y-mar.html", tags: [] },
