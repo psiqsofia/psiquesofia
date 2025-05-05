@@ -338,13 +338,14 @@
   <div class="contenido">
     <header class="perfil-profesional">
       <a href="cv.html" class="btn-cv">📄 CV</a>
-      <a href="portfolio.html" class="btn-cv">📄 Tech Portfolio</a>
+      <a href="portfolio.html" class="btn-cv">🗂️ Tech Portfolio</a>
       <a href="#formulario-contacto" class="boton">Contáctame</a>
 
       <div class="info-central">
+       <p>Psychologist, data analyst, creator</p>
         <h1>PsiqueSofía</h1>
         <p>Psicóloga, analista de datos, creadora</p>
-        <p>Psychologist, data analyst, creator</p>
+        
       </div>
 
       <div class="avatar-lateral">
@@ -354,15 +355,49 @@
 
     <!-- FORMULARIO DE CONTACTO FUERA DEL HEADER 👇 -->
     <section id="formulario-contacto" style="text-align: center; margin-top: 60px;">
-      <h2 style="font-family: 'Questrial', sans-serif;">¿Quieres escribirme? 🌻</h2>
-      <form action="https://formspree.io/f/xpwpbern" method="POST" style="max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 10px;">
-        <input type="text" name="name" placeholder="Tu nombre" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
-        <input type="email" name="_replyto" placeholder="Tu email" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
-        <textarea name="message" placeholder="Tu mensaje..." required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;"></textarea>
-        <button type="submit" style="background-color: #5eaa7d; color: white; padding: 10px; border: none; border-radius: 20px; font-family: 'Questrial', sans-serif; cursor: pointer;">Enviar mensaje</button>
-      </form>
-    </section>
-  </div>
+  <h2 id="form-title" style="font-family: 'Questrial', sans-serif;">¿Quieres escribirme? 🌻</h2>
+  <form action="https://formspree.io/f/xpwpbern" method="POST" style="max-width: 400px; margin: auto; display: flex; flex-direction: column; gap: 10px;">
+    <input id="name-input" type="text" name="name" placeholder="Tu nombre" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+    <input id="email-input" type="email" name="_replyto" placeholder="Tu email" required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;">
+    <textarea id="message-textarea" name="message" placeholder="Tu mensaje..." required style="padding: 10px; border-radius: 10px; border: 1px solid #ccc;"></textarea>
+    <button id="submit-button" type="submit" style="background-color: #5eaa7d; color: white; padding: 10px; border: none; border-radius: 20px; font-family: 'Questrial', sans-serif; cursor: pointer;">Enviar mensaje</button>
+  </form>
+</section>
+
+<script>
+  const translations = {
+    es: {
+      title: "¿Quieres escribirme? 🌻",
+      name: "Tu nombre",
+      email: "Tu email",
+      message: "Tu mensaje...",
+      button: "Enviar mensaje"
+    },
+    en: {
+      title: "Want to write me? 🌻",
+      name: "Your name",
+      email: "Your email",
+      message: "Your message...",
+      button: "Send message"
+    }
+  };
+
+  let currentLang = "es";
+
+  function switchLanguage() {
+    currentLang = currentLang === "es" ? "en" : "es";
+    const t = translations[currentLang];
+
+    document.getElementById("form-title").innerText = t.title;
+    document.getElementById("name-input").placeholder = t.name;
+    document.getElementById("email-input").placeholder = t.email;
+    document.getElementById("message-textarea").placeholder = t.message;
+    document.getElementById("submit-button").innerText = t.button;
+  }
+
+  // Cambiar idioma cada 5 segundos
+  setInterval(switchLanguage, 5000);
+</script>
 
 
 
